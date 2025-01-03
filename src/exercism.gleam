@@ -1,25 +1,29 @@
-pub fn secret_add(secret: Int) -> fn(Int) -> Int {
-  fn (x) { secret + x }
+import gleam/io
+
+pub fn main() {
+  io.debug(difference(10))
 }
 
-pub fn secret_subtract(secret: Int) -> fn(Int) -> Int {
-  fn (x) { x - secret }
+pub fn square_of_sum(n: Int) -> Int {
+  let total: Int = calculate_square_of_sum(n)
+  total * total
 }
 
-pub fn secret_multiply(secret: Int) -> fn(Int) -> Int {
-  fn (x) { x * secret }
-}
-
-pub fn secret_divide(secret: Int) -> fn(Int) -> Int {
-  fn (x) { x / secret }
-}
-
-pub fn secret_combine(
-  secret_function1: fn(Int) -> Int,
-  secret_function2: fn(Int) -> Int,
-) -> fn(Int) -> Int {
-  fn (x) {
-    let intermediate = secret_function1(x)
-    secret_function2(intermediate)
+pub fn calculate_square_of_sum(n: Int) -> Int {
+  case n {
+    0 -> 0
+    1 -> 1
+    _ -> n + calculate_square_of_sum(n - 1)
   }
+}
+
+pub fn sum_of_squares(n: Int) -> Int {
+  case n {
+    0 -> 0
+    _ -> n * n + sum_of_squares(n - 1)
+  }
+}
+
+pub fn difference(n: Int) -> Int {
+  square_of_sum(n) - sum_of_squares(n)
 }
