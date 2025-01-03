@@ -7,3 +7,4 @@
 
 - Hello World (`hello-world`)
 - Lasagna (`lasagna`)
+- Pacman (`pacman`)
