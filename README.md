@@ -6,3 +6,4 @@
 ## All exercices/branches
 
 - Hello World (`hello-world`)
+- Lasagna (`lasagna`)
