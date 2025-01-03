@@ -2,11 +2,12 @@ import gleam/string.{trim}
 
 pub fn message(log_line: String) -> String {
   case log_line {
-    "[INFO]:" <> rest -> trim(rest)
-    "[WARNING]:" <> rest -> trim(rest)
-    "[ERROR]:" <> rest -> trim(rest)
+    "[INFO]:" <> message -> message
+    "[WARNING]:" <> message -> message
+    "[ERROR]:" <> message -> message
     _ -> "Unknown"
   }
+  |> string.trim
 }
 
 pub fn log_level(log_line: String) -> String {
@@ -20,9 +21,10 @@ pub fn log_level(log_line: String) -> String {
 
 pub fn reformat(log_line: String) -> String {
   case log_line {
-    "[INFO]:" <> rest -> trim(rest) <> " (info)"
-    "[WARNING]:" <> rest -> trim(rest) <> " (warning)"
-    "[ERROR]:" <> rest -> trim(rest) <> " (error)"
+    "[INFO]:" <> message -> message <> " (info)"
+    "[WARNING]:" <> message -> message <> " (warning)"
+    "[ERROR]:" <> message -> message <> " (error)"
     _ -> "Unknown"
   }
+  |> string.trim
 }
