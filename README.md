@@ -14,3 +14,4 @@
 - Valentine's Day (`valentines-day`)
 - Bandwagoner (`bandwagoner`)
 - Secrets (`secrets`)
+- Difference Of Squares (`difference-of-square`)
