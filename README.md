@@ -16,3 +16,4 @@
 - Secrets (`secrets`)
 - Difference Of Squares (`difference-of-square`)
 - Bob (`bob`)
+- Leap (`leap`)
