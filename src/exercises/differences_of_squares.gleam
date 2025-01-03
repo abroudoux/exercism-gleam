@@ -10,18 +10,20 @@ pub fn square_of_sum(n: Int) -> Int {
 }
 
 pub fn calculate_square_of_sum(n: Int) -> Int {
-  case n {
+  let sum: Int = case n {
     0 -> 0
     1 -> 1
     _ -> n + calculate_square_of_sum(n - 1)
   }
+  sum
 }
 
 pub fn sum_of_squares(n: Int) -> Int {
-  case n {
+  let sum: Int = case n {
     0 -> 0
     _ -> n * n + sum_of_squares(n - 1)
   }
+  sum
 }
 
 pub fn difference(n: Int) -> Int {
