@@ -1,28 +1,43 @@
-import gleam/string.{trim}
-
-pub fn message(log_line: String) -> String {
-  case log_line {
-    "[INFO]:" <> rest -> trim(rest)
-    "[WARNING]:" <> rest -> trim(rest)
-    "[ERROR]:" <> rest -> trim(rest)
-    _ -> "Unknown"
-  }
+// TODO: please define the 'Approval' custom type
+pub type Approval {
+  Yes
+  No
+  Maybe
 }
 
-pub fn log_level(log_line: String) -> String {
-  case log_line {
-    "[INFO]:" <> _ -> "info"
-    "[WARNING]:" <> _ -> "warning"
-    "[ERROR]:" <> _ -> "error"
-    _ -> "Unknown"
-  }
+// TODO: please define the 'Cuisine' custom type
+pub type Cuisine {
+  Korean
+  Turkish
 }
 
-pub fn reformat(log_line: String) -> String {
-  case log_line {
-    "[INFO]:" <> rest -> trim(rest) <> " (info)"
-    "[WARNING]:" <> rest -> trim(rest) <> " (warning)"
-    "[ERROR]:" <> rest -> trim(rest) <> " (error)"
-    _ -> "Unknown"
+// TODO: please define the 'Genre' custom type
+pub type Genre {
+  Crime
+  Horror
+  Romance
+  Thriller
+}
+
+// TODO: please define the 'Activity' custom type
+pub type Activity {
+  BoardGame
+  Chill
+  Movie(Genre)
+  Restaurant(Cuisine)
+  Walk(Int)
+}
+
+pub fn rate_activity(activity: Activity) -> Approval {
+  case activity {
+    BoardGame -> No
+    Chill -> No
+    Movie(Romance) -> Yes
+    Movie(_) -> No
+    Restaurant(Korean) -> Yes
+    Restaurant(Turkish) -> Maybe
+    Walk(distance) if distance > 11 -> Yes
+    Walk(distance) if distance > 6 -> Maybe
+    Walk(_) -> No
   }
 }
