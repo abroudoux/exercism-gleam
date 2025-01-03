@@ -8,3 +8,4 @@
 - Hello World (`hello-world`)
 - Lasagna (`lasagna`)
 - Pacman (`pacman`)
+- Betty's Bike Shop (`bettys-bike-shop`)
