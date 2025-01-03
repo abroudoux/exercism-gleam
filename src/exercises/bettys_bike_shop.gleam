@@ -1,11 +1,5 @@
-import gleam/io
 import gleam/float
 import gleam/int
-
-pub fn main() {
-  io.debug(pence_to_pounds(33))
-  io.debug(pence_to_pounds(599))
-}
 
 pub fn pence_to_pounds(pence: Int) -> Float {
   int.to_float(pence) /. 100.0
