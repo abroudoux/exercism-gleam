@@ -1,4 +1,4 @@
-import gleam/string.{trim}
+import gleam/string
 
 pub fn message(log_line: String) -> String {
   case log_line {

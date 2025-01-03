@@ -15,9 +15,5 @@ pub fn win(
   power_pellet_active: Bool,
   touching_ghost: Bool,
 ) -> Bool {
-  case has_eaten_all_dots, power_pellet_active, touching_ghost {
-    True, False, True -> False
-    False, _, _ -> False
-    True, _, _ -> True
-  } 
+  has_eaten_all_dots && !lose(power_pellet_active, touching_ghost)
 }
