@@ -12,3 +12,4 @@
 - Guessing Game (`guessing-game`)
 - Log Levels (`log-levels`)
 - Valentine's Day (`valentines-day`)
+- Bandwagoner (`bandwagoner`)
