@@ -1,19 +1,23 @@
-pub fn expected_minutes_in_oven() -> Int {
-  40
+pub fn eat_ghost(power_pellet_active: Bool, touching_ghost: Bool) -> Bool {
+  power_pellet_active && touching_ghost
 }
 
-pub fn remaining_minutes_in_oven(time: Int) -> Int {
-  expected_minutes_in_oven() - time
+pub fn score(touching_power_pellet: Bool, touching_dot: Bool) -> Bool {
+  touching_power_pellet || touching_dot
 }
 
-pub fn preparation_time_in_minutes(layers: Int) -> Int {
-  layers * 2
+pub fn lose(power_pellet_active: Bool, touching_ghost: Bool) -> Bool {
+  !power_pellet_active && touching_ghost
 }
 
-pub fn total_time_in_minutes(layers: Int, time: Int) -> Int {
-  layers * 2 + time
-}
-
-pub fn alarm() {
-  "Ding!"
+pub fn win(
+  has_eaten_all_dots: Bool,
+  power_pellet_active: Bool,
+  touching_ghost: Bool,
+) -> Bool {
+  case has_eaten_all_dots, power_pellet_active, touching_ghost {
+    True, False, True -> False
+    False, _, _ -> False
+    True, _, _ -> True
+  } 
 }
