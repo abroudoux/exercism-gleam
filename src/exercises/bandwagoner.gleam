@@ -33,12 +33,11 @@ pub fn create_team(name: String, coach: Coach, stats: Stats) -> Team {
 }
 
 pub fn replace_coach(team: Team, coach: Coach) -> Team {
-  let team = Team(..team, coach: coach)
-  team
+  Team(..team, coach: coach)
 }
 
 pub fn is_same_team(home_team: Team, away_team: Team) -> Bool {
-  {home_team.stats == away_team.stats} && {home_team.name == away_team.name} && {home_team.coach == away_team.coach}
+  home_team == away_team
 }
 
 pub fn root_for_team(team: Team) -> Bool {
