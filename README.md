@@ -9,3 +9,4 @@
 - Lasagna (`lasagna`)
 - Pacman (`pacman`)
 - Betty's Bike Shop (`bettys-bike-shop`)
+- Guessing Game (`guessing-game`)
