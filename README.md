@@ -13,3 +13,4 @@
 - Log Levels (`log-levels`)
 - Valentine's Day (`valentines-day`)
 - Bandwagoner (`bandwagoner`)
+- Secrets (`secrets`)
