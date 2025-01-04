@@ -1,5 +1,3 @@
-import gleam/int
-import gleam/io
 import gleam/string
 
 pub type Robot {
@@ -95,37 +93,4 @@ fn return_string_without_first_char(string: String) -> String {
     Ok(#(_, tail)) -> tail
     _ -> ""
   }
-}
-
-pub fn direction_to_string(direction: Direction) -> String {
-  case direction {
-    North -> "North"
-    East -> "East"
-    South -> "South"
-    West -> "West"
-  }
-}
-
-pub fn print_robot_direction(robot: Robot) {
-  let direction: String = robot.direction
-  |> direction_to_string
-  io.println(direction)
-}
-
-fn print_robot_coordinates(robot: Robot) {
-  let x: String = robot.position.x
-  |> int.to_string
-  let y: String = robot.position.y
-  |> int.to_string
-  io.println(x)
-  io.println(y)
-}
-
-pub fn main() {
-  let robot: Robot = create(North, Position(x: 7, y: 3))
-  let robot_moved = move(robot.direction, robot.position, "RAA")
-  // let robot_moved = move(robot.direction, robot.position, "RAALAL")
-  print_robot_direction(robot_moved)
-  print_robot_coordinates(robot_moved)
-  // move(North, Position(x: 7, y: 3), "RAALAL")
 }
