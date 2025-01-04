@@ -22,3 +22,7 @@
 - Tracks on Tracks on Track
 - Bird Count
 - Robot Simulator
+- High Score Board
+- Pizza Pricing
+- Resistor Color
+- Tibusry Treasure Hunt
