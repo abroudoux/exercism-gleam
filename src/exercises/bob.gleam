@@ -30,7 +30,9 @@ pub fn is_remark_a_question(remark: String) -> Bool {
 }
 
 pub fn is_remark_yelled(remark: String) -> Bool {
-  let remark_capitalized = string.uppercase(string.trim(remark))
+  let remark_capitalized = remark
+  |> string.trim
+  |> string.uppercase
   remark_capitalized == remark
 }
 
