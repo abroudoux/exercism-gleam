@@ -39,7 +39,3 @@ pub fn pair(full_name1: String, full_name2: String) {
   //               *
   todo
 }
-
-pub fn main() {
-  io.debug(initials("Arthur broudoux"))
-}

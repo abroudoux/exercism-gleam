@@ -33,7 +33,5 @@ pub fn compare_temperature(left: Temperature, right: Temperature) -> Order {
 }
 
 pub fn sort_cities_by_temperature(cities: List(City)) -> List(City) {
-  case cities {
-    _ -> cities
-  }
+  todo
 }
