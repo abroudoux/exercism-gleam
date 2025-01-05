@@ -26,3 +26,4 @@
 - Pizza Pricing
 - Resistor Color
 - Tibusry Treasure Hunt
+- Wine Cellar
