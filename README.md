@@ -1,8 +1,8 @@
 # exercism
 
-🌼 Exercism Journey with Gleam Language
+⭐️ Exercism Journey with Gleam Language
 
-## All exercices
+## Exercises
 
 - [Hello World](/src/exercises/hello_world.gleam)
 - [Lasagna](/src/exercises/lasagna.gleam)
