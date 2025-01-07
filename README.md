@@ -30,3 +30,4 @@
 - [Role Playing Language](/src/exercises/role_playing_game.gleam)
 - [Erlang Extraction](/src/exercises/erlang_extraction.gleam)
 - [Two Fer](/src/exercises/two_fer.gleam)
+- [Accumulate](/src/exercises/accumulate.gleam)
