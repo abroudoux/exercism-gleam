@@ -28,3 +28,4 @@
 - [Tisbusry Treasure Hunt](/src/exercises/tisbury_treasure_hunt.gleam)
 - [Wine Cellar](/src/exercises/wine_cellar.gleam)
 - [Role Playing Language](/src/exercises/role_playing_game.gleam)
+- [Erlang Extraction](/src/exercises/erlang_extraction.gleam)
