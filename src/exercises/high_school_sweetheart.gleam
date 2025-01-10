@@ -1,41 +1,43 @@
-import gleam/io
+import gleam/result
 import gleam/string
 import gleam/list
 
-pub fn first_letter(name: String) {
+pub fn first_letter(name: String) -> String {
   name
   |> string.trim
   |> string.first
+  |> result.unwrap("")
 }
 
-pub fn initial(name: String) {
-  case first_letter(name) {
-    Ok(char) -> char |> string.uppercase |> string.append(".")
-    _ -> ""
-  }
+pub fn initial(name: String) -> String {
+  name
+  |> first_letter
+  |> string.uppercase 
+  |> string.append(".")
 }
 
-pub fn initials(full_name: String) {
+pub fn initials(full_name: String) -> String {
   full_name
   |> string.split(on: " ")
-  |> list.map(fn(str) { initial(str) })
-  |> string.concat
+  |> list.map(initial)
+  |> string.join(" ")
 }
 
 pub fn pair(full_name1: String, full_name2: String) {
-  //      ******       ******
-  //    **      **   **      **
-  //  **         ** **         **
-  // **            *            **
-  // **                         **
-  // **     X. X.  +  X. X.     **
-  //  **                       **
-  //    **                   **
-  //      **               **
-  //        **           **
-  //          **       **
-  //            **   **
-  //              ***
-  //               *
-  todo
+  "
+     ******       ******
+   **      **   **      **
+ **         ** **         **
+**            *            **
+**                         **
+**     " <> initials(full_name1) <> "  +  " <> initials(full_name2) <> "     **
+ **                       **
+   **                   **
+     **               **
+       **           **
+         **       **
+           **   **
+             ***
+              *
+"
 }

@@ -1,15 +1,43 @@
-import gleam/io
+import gleam/result
+import gleam/string
+import gleam/list
 
-let sentences: List(String) = [
-  "the house that Jack Built."
-]
-
-pub fn recite(start_verse: Int, end_verse: Int) -> String {
-  "This is " <> case start_verse, end_verse {
-    _, _ -> ""
-  }
+pub fn first_letter(name: String) -> String {
+  name
+  |> string.trim
+  |> string.first
+  |> result.unwrap("")
 }
 
-pub fn main() {
-  io.println(recite(1, 1))
+pub fn initial(name: String) -> String {
+  name
+  |> first_letter
+  |> string.uppercase 
+  |> string.append(".")
+}
+
+pub fn initials(full_name: String) -> String {
+  full_name
+  |> string.split(on: " ")
+  |> list.map(initial)
+  |> string.join(" ")
+}
+
+pub fn pair(full_name1: String, full_name2: String) {
+  "
+     ******       ******
+   **      **   **      **
+ **         ** **         **
+**            *            **
+**                         **
+**     " <> initials(full_name1) <> "  +  " <> initials(full_name2) <> "     **
+ **                       **
+   **                   **
+     **               **
+       **           **
+         **       **
+           **   **
+             ***
+              *
+"
 }

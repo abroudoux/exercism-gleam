@@ -34,3 +34,4 @@
 - [Gotta Snatch 'Em All](/src/exercises/gotta_snatch_em_all.gleam)
 - [Reverse String](/src/exercises/reverse_string.gleam)
 - [Strain](/src/exercises/strain.gleam)
+- [High School Sweetheart](/src/exercises/high_school_sweetheart.gleam)
