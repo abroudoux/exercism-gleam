@@ -1,40 +1,37 @@
-import gleam/result
+import gleam/order.{type Order}
 
-pub type Player {
-  Black
-  White
+pub type City {
+  City(name: String, temperature: Temperature)
 }
 
-pub type Game {
-  Game(
-    white_captured_stones: Int,
-    black_captured_stones: Int,
-    player: Player,
-    error: String,
-  )
+pub type Temperature {
+  Celsius(Float)
+  Fahrenheit(Float)
 }
 
-pub fn apply_rules(
-  game: Game,
-  rule1: fn(Game) -> Result(Game, String),
-  rule2: fn(Game) -> Game,
-  rule3: fn(Game) -> Result(Game, String),
-  rule4: fn(Game) -> Result(Game, String),
-) -> Game {
-  case game
-    |> rule1
-    |> result.map(rule2)
-    |> result.try(rule3)
-    |> result.try(rule4)
-  {
-    Ok(new_game) -> Game(..new_game, player: invert_player(game.player))
-    Error(error) -> Game(..game, error: error)
+pub fn fahrenheit_to_celsius(f: Float) -> Float {
+  { f -. 32.0 } /. 1.8
+}
+
+pub fn compare_temperature(left: Temperature, right: Temperature) -> Order {
+  let left_celsius = case left {
+    Celsius(c) -> c
+    Fahrenheit(f) -> fahrenheit_to_celsius(f)
+  }
+  let right_celsius = case right {
+    Celsius(c) -> c
+    Fahrenheit(f) -> fahrenheit_to_celsius(f)
+  }
+
+  case left_celsius >. right_celsius {
+    True -> order.Gt
+    False -> case left_celsius <. right_celsius {
+      True -> order.Lt
+      False -> order.Eq
+    }
   }
 }
 
-fn invert_player(player: Player) -> Player {
-  case player {
-    White -> Black
-    Black -> White
-  }
+pub fn sort_cities_by_temperature(cities: List(City)) -> List(City) {
+  todo
 }

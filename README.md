@@ -1,4 +1,4 @@
-# exercism
+# exercism-gleam
 
 ⭐️ Exercism Journey with Gleam Language
 
@@ -36,3 +36,7 @@
 - [Strain](/src/exercises/strain.gleam)
 - [High School Sweetheart](/src/exercises/high_school_sweetheart.gleam)
 - [Go](/src/exercises/go.gleam)
+
+## License
+
+This repository is under MIT License. See [here](LICENSE)
