@@ -1,4 +1,5 @@
 import gleam/order.{type Order}
+import gleam/list
 
 pub type City {
   City(name: String, temperature: Temperature)
@@ -33,5 +34,8 @@ pub fn compare_temperature(left: Temperature, right: Temperature) -> Order {
 }
 
 pub fn sort_cities_by_temperature(cities: List(City)) -> List(City) {
-  todo
+  cities
+  |> list.sort(by: fn(city1, city2) {
+    compare_temperature(city1.temperature, city2.temperature)
+  })
 }
