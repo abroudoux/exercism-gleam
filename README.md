@@ -37,6 +37,7 @@
 - [High School Sweetheart](/src/exercises/high_school_sweetheart.gleam)
 - [Go](/src/exercises/go.gleam)
 - [Weather Ranking](/src/exercises/weather_ranking.gleam)
+- [Spring Cleaning](/src/exercises/spring_cleaning.gleam)
 
 ## License
 
