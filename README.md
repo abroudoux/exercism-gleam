@@ -35,3 +35,4 @@
 - [Reverse String](/src/exercises/reverse_string.gleam)
 - [Strain](/src/exercises/strain.gleam)
 - [High School Sweetheart](/src/exercises/high_school_sweetheart.gleam)
+- [Go](/src/exercises/go.gleam)
