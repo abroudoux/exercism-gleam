@@ -38,6 +38,7 @@
 - [Go](/src/exercises/go.gleam)
 - [Weather Ranking](/src/exercises/weather_ranking.gleam)
 - [Spring Cleaning](/src/exercises/spring_cleaning.gleam)
+- [Newsletter](/src/exercises/newsletter.gleam)
 
 ## License
 
