@@ -40,6 +40,7 @@
 - [Spring Cleaning](/src/exercises/spring_cleaning.gleam)
 - [Newsletter](/src/exercises/newsletter.gleam)
 - [Anagram](/src/exercises/anagram.gleam)
+- [Pangram](/src/exercises/pangram.gleam)
 
 ## License
 
