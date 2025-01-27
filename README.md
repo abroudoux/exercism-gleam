@@ -41,6 +41,7 @@
 - [Newsletter](/src/exercises/newsletter.gleam)
 - [Anagram](/src/exercises/anagram.gleam)
 - [Pangram](/src/exercises/pangram.gleam)
+- [Isogram](/src/exercises/isogram.gleam)
 
 ## License
 
