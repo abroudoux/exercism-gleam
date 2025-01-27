@@ -1,49 +1,26 @@
 import gleam/list
+import gleam/io
 import gleam/string
-import simplifile
 
-pub fn read_emails(path: String) -> Result(List(String), Nil) {
-  case simplifile.read(path) {
-    Ok(lines) -> {
-      let email_list = 
-        lines
-        |> string.split("\n")
-        |> list.filter(fn(email) { string.trim(email) != "" })
-      Ok(email_list)
-    }
-    Error(_) -> Error(Nil)
-  }
+pub fn main() {
+  let word: String = "stone"
+  let candidates: List(String) = ["stone", "tones", "banana", "tons", "notes", "Seton"]
+
+  // result expected = "tones", "notes", "Seton".
+  let _ = find_anagrams(word, candidates)
+  |> list.each(fn(w) { io.println(w) })
 }
 
-pub fn create_log_file(path: String) -> Result(Nil, Nil) {
-  case simplifile.create_file(path) {
-    Ok(_) -> Ok(Nil)
-    Error(_) -> Error(Nil)
-  }
+pub fn find_anagrams(word: String, candidates: List(String)) -> List(String) {
+  let chars = word |> string.uppercase |> string.to_graphemes
+  candidates 
+  |> list.filter(fn(w) { string.length(word) == string.length(w) }) 
+  |> list.filter(fn(w) { w != word }) 
+  |> list.filter(fn(w) { w |> string.uppercase != word })
+  |> list.filter(fn(w) { is_word_an_anagram(chars, w) })
 }
 
-pub fn log_sent_email(path: String, email: String) -> Result(Nil, Nil) {
-  case simplifile.append(path, email <> "\n") {
-    Ok(_) -> Ok(Nil)
-    Error(_) -> Error(Nil)
-  }
-}
-
-pub fn send_newsletter(
-  emails_path: String,
-  log_path: String,
-  send_email: fn(String) -> Result(Nil, Nil),
-) -> Result(Nil, Nil) {
-  case read_emails(emails_path) {
-    Ok(emails) -> {
-      let _ = create_log_file(log_path)
-      list.try_each(emails, fn(email) {
-        case send_email(email) {
-          Ok(_) -> log_sent_email(log_path, email)
-          Error(_) -> Ok(Nil)
-        }
-      })
-    }
-    Error(_) -> Error(Nil)
-  }
+fn is_word_an_anagram(chars: List(String), candidate: String) -> Bool {
+  let chars_candidate = candidate |> string.uppercase |> string.to_graphemes
+  list.sort(chars, string.compare) == list.sort(chars_candidate, string.compare)
 }
