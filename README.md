@@ -42,6 +42,7 @@
 - [Anagram](/src/exercises/anagram.gleam)
 - [Pangram](/src/exercises/pangram.gleam)
 - [Isogram](/src/exercises/isogram.gleam)
+- [Eliud's Eggs](/src/exercises/eliuds_eggs.gleam)
 
 ## License
 
